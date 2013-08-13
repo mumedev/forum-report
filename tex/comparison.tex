@@ -1,0 +1,29 @@
+\chapter{Comparison}\label{chapter:comparison}
+
+% Mobile versus native
+% iOS versus Android
+
+\section{Web versus native mobile applications}
+
+In \cite{Charland:2011:MAD:1941487.1941504} a table is presented of the required skill set to be able to write mobile applications for each platform. From the nine mobile technologies that were included, the market shares for Android and iOS operating systems are 68.3\% and 18.8\% respectively, clearly dominating the market \cite{Graziano:2012}. Numbers suggest that the Windows Phone will establish itself as another giant on the market, however still considerably less significant than Android or iOS. Even though this suggests development of native applications can be reduced to development for two to three technologies, the cost of developing and maintaining applications in these technologies would still create a considerable overhead. Charland et al. \cite{Charland:2011:MAD:1941487.1941504} look at mobile web technology to address this issue of heterogeneity.
+
+
+\subsection{Phonegap hack}
+
+The 'Phonegap hack' has grown from the fact that all mobile operating systems are equipped with a mobile browser, in which the native API can be called by using JavaScript. Unfortunately there are differences between the Webkit implementations of these browsers. In recent years many of these issues are being addressed through various libraries, e.g. jQuery Mobile. Also, the W3C has a device API working group that is working to bridge the gap between lower level native APIs and web technology \cite{Charland:2011:MAD:1941487.1941504}. JavaScript virtual machine technology is quickly getting more powerful, driven by competition between browsers. In the end, in \cite{Charland:2011:MAD:1941487.1941504} is stated that 'if you want to add a native capability to a browser, then you can either bridge it or recompile the browser to achieve that capability'.
+
+
+\begin{quotation}
+	If a browser does not support a native capability, it's not because it can't or that it won't; it just means it hasn't been done yet (Charland et al.).
+\end{quotation}
+
+
+\subsection{Trade-offs}
+
+A brief list of trade-offs between web and native mobile applications:
+Size of the code base - the code base for a mobile web application will be significantly smaller than the code base for two or more native applications;
+Efficiency of maintenance - the cost of maintenance may be directly related to the number of versions of an application that need to be updated;
+Application performance - native applications still outperform mobile web applications;
+Development time;
+Application objectives - related to application performance, as nice looking visuals do not fulfill business requirements, but may require significantly more processing power;
+GUI guidelines: creating only one application for different platforms, may require a lot of conditional statements to provide user interface code that is conform with the guidelines for each seperate platform;
