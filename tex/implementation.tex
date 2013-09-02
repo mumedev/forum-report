@@ -18,6 +18,10 @@ For this application, a relational database was implemented using \texttt{MySQL}
 	\label{figure:erd}
 \end{figure}
 
+\subsection{Remarks}
+
+Although the relational database certainly will do the job in this case, under certain conditions NoSQL databases scale better when huge quantities of data are involved. As a result, if this app would be used by a great number of students, it is not unlikely that another design choice may outperform this one.
+
 
 
 % REST
@@ -49,6 +53,15 @@ Each method listed in table \ref{table:rest_api} is then implemented in the \tex
 
 Alternative libraries for REST and PHP exist, but also for other technologies, such as GAE. For example the Boomi Appengine REST Server\footnote{\url{https://code.google.com/p/appengine-rest-server/}} is a library for Google App Engine applications. Of course, this would also require a somewhat different underlying data model as mentioned earlier.
 
+\subsection{Remarks}
+
+When designing an API as described above, it is important to ensure that the data remains consistent. In this case, the login functionality forms a possible danger in that respect, as a user may log in from multiple apps simultaneously, and the server doesn't keep track of the number of logged in apps per user account. At the moment the session key is required to ensure that no one else log out any other user. Instead, a solution might be to create a separate table to keep track of these sessions, rather than keep a single session key entry in the user table.
+
+If we were to create only the mobile web app, which depending on the type of application, is quite reasonable, implementing a REST API may seem like overkill. Instead a simpler design could be used to persist data. Nonetheless, when developing multiple native applications, the cost savings of creating a back-end to process parts of the data may be significant. For example, graphical operations that require a lot of computational power may be done on the device itself, while operations on the data may be done on the server.
+
+Coming back to the point raised earlier on the performance bottleneck of a relational database. Suppose this is the case, having a well-defined API provides transparency, as the clients depend on the public interface, rather than how everything works under the hood.
+
+
 
 \section{Clients}
 
@@ -57,7 +70,7 @@ Now that we have discussed the server side of the architecture, we will take a c
 
 \subsection{HTML5 mobile web application}
 
-The \texttt{HTML5} mobile web application is basically implemented as an \texttt{HTTP5} web page enhanced with the jQuery mobile library\footnote{\url{http://jquerymobile.com/}}. The internal architecture consists out of JavaScript, HTML and CSS. The JavaScript code consists out of a number of libraries and source code making the connection to the back-end and controlling the view. The jQuery mobile library provides a layer on top of the original JavaScript to facilitate operations for modifying the view and the use of AJAX. A second library mirrors the REST API methods and helps to provide additional transparency when making asynchronous calls to the server. The resulting application structure is shown in figure \ref{figure:html5:architecture}.
+The \texttt{HTML5} mobile web application is basically implemented as an \texttt{HTML} web page enhanced with the jQuery mobile library\footnote{\url{http://jquerymobile.com/}}. The internal architecture consists out of JavaScript, HTML and CSS. The JavaScript code consists out of a number of libraries and source code making the connection to the back-end and controlling the view. The jQuery mobile library provides a layer on top of the original JavaScript to facilitate operations for modifying the view and the use of AJAX. A second library mirrors the REST API methods and helps to provide additional transparency when making asynchronous calls to the server. The resulting application structure is shown in figure \ref{figure:html5:architecture}.
 
 %% architecture HTML5
 \begin{figure}
