@@ -1,0 +1,57 @@
+\chapter{REST API}\label{app:rest}
+
+\begin{table}
+	\caption{REST API}\label{table:rest_api}
+	
+	\begin{center}
+		\begin{tabular}{p{70px} | p{70px} | p{210px}}
+				\hline
+				\hline
+				\textbf{Resource} 		& \textbf{Method}					&	\textbf{Description} 	\\
+				\hline
+				\hline
+				\texttt{ANSWER}				& 												&	\\
+				\hline
+															& \emph{create}						& Create a new answer. \\
+															& \emph{get\_question}		& Get the question this answer was posted on. \\
+															%& \emph{search}						& Search an answer.	\\
+				\hline
+				\texttt{AUTHENTICATION}		& 												&	\\
+				\hline
+															& \emph{endsession}				& Create a new answer. \\
+															& \emph{startsession}			& Get the question this answer was posted on. \\
+				\hline
+				\texttt{QUESTION}			& 												& \\
+				\hline
+															& \emph{create}						& Post a new question. \\
+															& \emph{get\_answers}			& Get the answers for a question. \\
+															& \emph{get\_info}				& Get information on a question. \\
+															& \emph{get\_skills}			& Get the skills related to this question. \\
+															& \emph{remove}						& Delete a question. \\
+															%& \emph{search}						& Search questions, given a number of search parameters. \\
+				\hline
+				\texttt{SKILL}				& 												& \\
+				\hline
+															& \emph{create}						& Create a new skill and add it to the database. \\
+															& \emph{get\_questions}		& Get questions related to a given skill. \\
+															%& \emph{search}						& Search skills. \\
+				\hline
+				\texttt{USER}					&	\\
+				\hline
+															& \emph{get\_answers}			& Get the answers submitted by a user. \\
+															& \emph{get\_questions}		& Get questions submitted by a user. \\
+															& \emph{get\_info}				&	Retrieve profile information about a user.	\\
+															& \emph{get\_skills}			& Get the skills of a user. \\
+															& \emph{register}					&	Register a new user account. \\
+															& \emph{search}						&	Search a user given certain parameters. \\
+															& \emph{unregister}				&	Delete a user account. \\
+															& \emph{update\_info}			& Update profile information about a user. \\
+															%& \emph{getContacts}	  	& \\
+															%& \emph{}									& \\
+				\hline
+				\hline
+		\end{tabular}
+	\end{center}
+	
+\end{table}
+
