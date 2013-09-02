@@ -7,23 +7,23 @@
 
 In \cite{Charland:2011:MAD:1941487.1941504} a table is presented of the required skill set to be able to write mobile applications for each platform. From the nine mobile technologies that were included, the market shares for Android and iOS operating systems are 68.3\% and 18.8\% respectively, clearly dominating the market \cite{Graziano:2012}. Numbers suggest that the Windows Phone will establish itself as another giant on the market, however still considerably less significant than Android or iOS. Even though this suggests development of native applications can be reduced to development for two to three technologies, the cost of developing and maintaining applications in these technologies would still create a considerable overhead. Charland et al. \cite{Charland:2011:MAD:1941487.1941504} look at mobile web technology to address this issue of heterogeneity.
 
-
-\subsection{Phonegap hack}
-
-The 'Phonegap hack' has grown from the fact that all mobile operating systems are equipped with a mobile browser, in which the native API can be called by using JavaScript. Unfortunately there are differences between the Webkit implementations of these browsers. In recent years many of these issues are being addressed through various libraries, e.g. jQuery Mobile. Also, the W3C has a device API working group that is working to bridge the gap between lower level native APIs and web technology \cite{Charland:2011:MAD:1941487.1941504}. JavaScript virtual machine technology is quickly getting more powerful, driven by competition between browsers. In the end, in \cite{Charland:2011:MAD:1941487.1941504} is stated that 'if you want to add a native capability to a browser, then you can either bridge it or recompile the browser to achieve that capability'.
-
+The 'Phonegap hack' has grown from the fact that all mobile operating systems are equipped with a mobile browser, in which the native API can be called by using JavaScript. Unfortunately there are differences between the Webkit implementations of these browsers. In recent years many of these issues are being addressed through various libraries, e.g. jQuery Mobile, Sencha Touch, DaVinchi Studio, and Wink\cite{Charland:2011:MAD:1941487.1941504, mobpartner:2013}. Also, the \texttt{W3C} has a device API working group that is working to bridge the gap between lower level native APIs and web technology \cite{Charland:2011:MAD:1941487.1941504}. JavaScript virtual machine technology is quickly getting more powerful, driven by competition between browsers. In the end, in \cite{Charland:2011:MAD:1941487.1941504} is stated that 'if you want to add a native capability to a browser, then you can either bridge it or recompile the browser to achieve that capability'.
 
 \begin{quotation}
-	If a browser does not support a native capability, it's not because it can't or that it won't; it just means it hasn't been done yet (Charland et al.).
+	\textit{If a browser does not support a native capability, it's not because it can't or that it won't; it just means it hasn't been done yet (Charland et al., 2011).}
 \end{quotation}
 
+A number of trade-offs between web and native mobile applications have to be taken into account. First of all, the size of the code base certainly affects the required development time. The code base for a mobile web application will be significantly smaller than the code base for two or more native applications\cite{Charland:2011:MAD:1941487.1941504}. On the other hand, using a server to process transactions to the database as described in the previous chapters, alleviates the need to develop complicated data management systems for each app separately. Also, by providing a public API, third parties may be tempted to write their own clients, possibly increasing the value of the data and application as a whole.
 
-\subsection{Trade-offs}
+Related to the size of the code base is the efficiency of maintenance, as the cost of maintenance may be directly related to the number of versions of an application that need to be updated\cite{Charland:2011:MAD:1941487.1941504}.
 
-A brief list of trade-offs between web and native mobile applications:
-Size of the code base - the code base for a mobile web application will be significantly smaller than the code base for two or more native applications;
-Efficiency of maintenance - the cost of maintenance may be directly related to the number of versions of an application that need to be updated;
-Application performance - native applications still outperform mobile web applications;
-Development time;
-Application objectives - related to application performance, as nice looking visuals do not fulfill business requirements, but may require significantly more processing power;
-GUI guidelines: creating only one application for different platforms, may require a lot of conditional statements to provide user interface code that is conform with the guidelines for each seperate platform;
+On the other hand native applications still outperform mobile web applications. In this respect the application objectives should be taken into careful consideration, as nice looking visuals do not fulfill business requirements, but may require significantly more processing power. Although web applications are aimed at supporting multiple platforms, creating only one application for different platforms, may require a lot of conditional statements to provide user interface code that is conform with the guidelines for each seperate platform\cite{Charland:2011:MAD:1941487.1941504}.
+
+All in all, the main trade-off seems to be one in terms of development time and maintenance against performance and look \& feel. Although, Charland et al. suggest that the performance gap is getting smaller over time, as of now utility applications with low graphic processing lend themselves well for mobile web apps, while demanding applications in terms of CPU would benefit from a native approach. However, to cover a maximum amount of potential users, it is obvious that in the case of native applications, more than one app will have to be built.
+
+
+\section{Native }
+
+
+
+
