@@ -2,9 +2,7 @@
 <conversation channels="sql,php,codeigniter">
 	<author>joris</author>
 	<date>09-02-2013 18:52:00</date>
-	<question>
-		How do I implement an SQL query ...
-	</question>
+	<question>How do I ...</question>
 	<answers>
 		<answer>
 			<author>sander</author>
@@ -14,11 +12,7 @@
 			</text>
 		<answer/>
 		<answer>
-			<author>nik</author>
-			<date>09-02-2013 19:30:00</date>
-			<text>
-				You might need ...
-			</text>
-		<answer/>
+			...
+			
 	<answers/>
 </conversation>

@@ -28,24 +28,23 @@ The REST API is implemented using the codeigniter framework. Codeigniter\footnot
 
 Each method listed in table \ref{table:rest_api} is then implemented in the \texttt{Api} class. Each method signature has as a suffix an underscore followed by the HTTP method name, e.g. for the method \emph{create} and HTTP method POST, this results in \emph{create\_post}. The class diagram of the backend of the application is shown in figure \ref{figure:codeigniter:classdiagram}. Figure \ref{figure:architecture:global2} summarize the application's internal structure as discussed so far.
 
+%% class codeigniter
 \begin{figure}
-	
 	\begin{center}
 		\includegraphics[width=200px]{img/codeigniter_class_diagram}
 		\caption{The class diagram of the codeigniter project.}
 		\label{figure:codeigniter:classdiagram}
 	\end{center}
-
 \end{figure}
 
+
+%% global2
 \begin{figure}
-	
 	\begin{center}
 		\includegraphics[width=200px]{img/architecture_global2}
 		\caption{The global architecture of the application, including REST, the Codeigniter MVC design and the MySQL database.}
 		\label{figure:architecture:global2}
 	\end{center}
-
 \end{figure}
 
 Alternative libraries for REST and PHP exist, but also for other technologies, such as GAE. For example the Boomi Appengine REST Server\footnote{\url{https://code.google.com/p/appengine-rest-server/}} is a library for Google App Engine applications. Of course, this would also require a somewhat different underlying data model as mentioned earlier.
@@ -58,13 +57,59 @@ Now that we have discussed the server side of the architecture, we will take a c
 
 \subsection{HTML5 mobile web application}
 
-The \texttt{HTML5} mobile web application is basically implemented as an \texttt{HTTP5} web page enhanced with the jQuery mobile library\footnote{\url{http://jquerymobile.com/}}. The internal architecture consists out of JavaScript
+The \texttt{HTML5} mobile web application is basically implemented as an \texttt{HTTP5} web page enhanced with the jQuery mobile library\footnote{\url{http://jquerymobile.com/}}. The internal architecture consists out of JavaScript, HTML and CSS. The JavaScript code consists out of a number of libraries and source code making the connection to the back-end and controlling the view. The jQuery mobile library provides a layer on top of the original JavaScript to facilitate operations for modifying the view and the use of AJAX. A second library mirrors the REST API methods and helps to provide additional transparency when making asynchronous calls to the server. The resulting application structure is shown in figure \ref{figure:html5:architecture}.
 
+%% architecture HTML5
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=200px]{img/html5_architecture}
+		\caption{The internal structure of the HTML5 mobile web app.}
+		\label{figure:html5:architecture}
+	\end{center}
+\end{figure}
+
+
+Listing \ref{listing:html5:api} shows how the connection is made to the server in the api library. Listing \ref{listing:html5:api:use} shows how it is used in the application. An asynchronous call is made to the server. Once the result is available the anonymous function on line 5 to 13 in listing \ref{listing:html5:api:use} is executed.
+
+\lstinputlisting[language=Java, firstline=1, lastline=16, caption={A method from the JavaScript API library to make the connection to the server.}, label={listing:html5:api}]{code/forum.api.js}
+
+\lstinputlisting[language=Java, firstline=1, lastline=15, caption={Calling a method from the JavaScript API library.}, label={listing:html5:api:use}]{code/authentication.js}
 
 
 \subsection{Android application}
 
+The Android application follows a similar design. A seperate collection of classes provides transparent access to the REST methods of the server, as shown in figure \ref{figure:android:architecture}. Instead of passing an anonymous function as parameter, a specific listener is implemented for each asynchronous operation. Once the data is available, the notify method of the listener is called. The custom implementation of this method deals with the result from the request. This is shown in listings \ref{listing:android:api}, \ref{listing:android:listener} and \ref{listing:android:activity}. The corresponding class diagram is shown in figure \ref{figure:android:classdiagram}.
+
+%% architecture Android
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=300px]{img/android_architecture}
+		\caption{The internal structure of the Android native app.}
+		\label{figure:android:architecture}
+	\end{center}
+\end{figure}
+
+\lstinputlisting[language=Java, firstline=6, lastline=36, caption={AnsyncTask to execute an asynchronous request to the REST server.}, label={listing:android:api}]{code/Authentication.java}
+
+\lstinputlisting[language=Java, firstline=1, lastline=3, caption={Listener for the StartSession task.}, label={listing:android:listener}]{code/StartSessionListener.java}
+
+\lstinputlisting[language=Java, firstline=1, lastline=15, caption={Activity that implements the StartSession listener.}, label={listing:android:activity}]{code/MainActivity.java}
+
+%% class diagram Android
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=350px]{img/android_class_diagram}
+		\caption{Class diagram for the Android app.}
+		\label{figure:android:classdiagram}
+	\end{center}
+\end{figure}
+
 
 \subsection{iOS application}
+
+Unfortunately no implementation for iOS has been completed. The global structure of the class diagram for the application would have been relatively similar to the Android application, cf. figure \ref{figure:android:architecture}, again with a separate library, which can be implemented in iOS through a static library\footnote{\url{https://developer.apple.com/library/ios/technotes/iOSStaticLibraries/Introduction.html}}, or model classes that are mapped onto the REST service's resources.
+
+
+
 
 
