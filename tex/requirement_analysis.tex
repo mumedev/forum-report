@@ -6,9 +6,12 @@
 The use of the application can be illustrated by the following  user story. Figure \ref{figure:storyboard} depicts the same story line.
 
 \begin{figure}
-	\includegraphics[width=200px]{img/filename}
-	\caption{Story board depicting a potential scenario of use.}
-	\label{figure:storyboard}
+	\begin{center}
+		\includegraphics[width=300px]{img/storyboard}
+		\caption{Story board depicting a potential scenario of use.}
+		\label{figure:storyboard}
+\end{center}
+
 \end{figure}
 
 
@@ -56,7 +59,7 @@ The use case diagram for the application is shown in  figure \ref{figure:use_cas
 \end{figure}
 
 
-\begin{table}[h]
+\begin{table}[ht]
 \caption{Use case 1 \textit{Post question}}
 \begin{center}
 	\begin{tabular}{ l p{300px} }
@@ -78,7 +81,7 @@ The use case diagram for the application is shown in  figure \ref{figure:use_cas
 \end{table}
 
 
-\begin{table}[h]
+\begin{table}[ht]
 \caption{Use case 2 \textit{Post answer}}
 \begin{center}
 	\begin{tabular}{ l p{300px} }
@@ -102,7 +105,7 @@ The use case diagram for the application is shown in  figure \ref{figure:use_cas
 
 
 
-\begin{table}[h]
+\begin{table}[ht]
 \caption{Use case 3 \textit{Take part in discussion.}}
 \begin{center}
 	\begin{tabular}{ l p{300px} }
@@ -126,8 +129,49 @@ The use case diagram for the application is shown in  figure \ref{figure:use_cas
 
 
 
+\begin{table}[ht]
+\caption{Use case 4 \textit{Log in.}}
+\begin{center}
+	\begin{tabular}{ l p{300px} }
+		\hline
+		\textbf{Primary actor:}	& Active user \\
+
+		\textbf{Preconditions:}		& The user is not logged in; \\
+															& The user has an account.\\
+
+		\textbf{Basic flow:}			& (1) The user enters his/her credentials. \\
+															& (2) The user submits the credentials. \\
+															& (3) The user is logged in. \\
+		\textbf{Alternate flow:}	& (3b) The credentials were incorrect. The user receives an error message. \\
+		\hline
+	\end{tabular}
+\end{center}
+\label{table:use_case4}
+\end{table}
+
+
+\begin{table}[ht]
+\caption{Use case 5 \textit{Log out.}}
+\begin{center}
+	\begin{tabular}{ l p{300px} }
+		\hline
+		\textbf{Primary actor:}	& Active user \\
+
+		\textbf{Preconditions:}		& The user is logged in; \\
+
+		\textbf{Basic flow:}			& (1) The user selects the option to log out. \\
+															& (2) The user is logged out. \\
+		\hline
+	\end{tabular}
+\end{center}
+\label{table:use_case5}
+\end{table}
+
+
+
 \section{Screen transition diagram}\label{section:screen_transitions}
 
+Figure \ref{figure:screen_transition_diagram} shows how the screens are related and which interactions determine the flow of the application.
 
 \begin{figure}
 	\begin{center}
