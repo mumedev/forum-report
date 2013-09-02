@@ -6,7 +6,7 @@
 To structure the information on the level of the data, different alternatives can be conceived to represent the data made available through the public API. For example, conversations can be represented as \texttt{XML}, as shown in listing \ref{listing:xmldb}. Operations can then be implemented to append or remove elements.
 
 %% LISTING
-\lstinputlisting[language=XML, caption={Example of an \texttt{XML} data representation.}, label={listing:xmldb}]{code/database.xml}
+%\lstinputlisting[language=XML, caption={Example of an \texttt{XML} data representation.}, label={listing:xmldb}]{code/database.xml}
 
 Alternatively, a NoSQL database can be designed, for example using the Datastore on Google App Engine (GAE).
 
@@ -84,9 +84,12 @@ The \texttt{HTML5} mobile web application is basically implemented as an \texttt
 
 Listing \ref{listing:html5:api} shows how the connection is made to the server in the api library. Listing \ref{listing:html5:api:use} shows how it is used in the application. An asynchronous call is made to the server. Once the result is available the anonymous function on line 5 to 13 in listing \ref{listing:html5:api:use} is executed.
 
-\lstinputlisting[language=Java, firstline=1, lastline=16, caption={A method from the JavaScript API library to make the connection to the server.}, label={listing:html5:api}]{code/forum.api.js}
+%\lstinputlisting[language=Java, firstline=1, lastline=16, caption={A method from the JavaScript API library to make the connection to the server.}, label={listing:html5:api}]{code/forum.api.js}
 
-\lstinputlisting[language=Java, firstline=1, lastline=15, caption={Calling a method from the JavaScript API library.}, label={listing:html5:api:use}]{code/authentication.js}
+%\lstinputlisting[language=Java, firstline=1, lastline=15, caption={Calling a method from the JavaScript API library.}, label={listing:html5:api:use}]{code/authentication.js}
+
+%\subsubsection{Remarks}
+
 
 
 \subsection{Android application}
@@ -102,11 +105,11 @@ The Android application follows a similar design. A seperate collection of class
 	\end{center}
 \end{figure}
 
-\lstinputlisting[language=Java, firstline=6, lastline=36, caption={AnsyncTask to execute an asynchronous request to the REST server.}, label={listing:android:api}]{code/Authentication.java}
+%\lstinputlisting[language=Java, firstline=6, lastline=36, caption={AnsyncTask to execute an asynchronous request to the REST server.}, label={listing:android:api}]{code/Authentication.java}
 
-\lstinputlisting[language=Java, firstline=1, lastline=3, caption={Listener for the StartSession task.}, label={listing:android:listener}]{code/StartSessionListener.java}
+%\lstinputlisting[language=Java, firstline=1, lastline=3, caption={Listener for the StartSession task.}, label={listing:android:listener}]{code/StartSessionListener.java}
 
-\lstinputlisting[language=Java, firstline=1, lastline=15, caption={Activity that implements the StartSession listener.}, label={listing:android:activity}]{code/MainActivity.java}
+%\lstinputlisting[language=Java, firstline=1, lastline=15, caption={Activity that implements the StartSession listener.}, label={listing:android:activity}]{code/MainActivity.java}
 
 %% class diagram Android
 \begin{figure}
@@ -116,6 +119,10 @@ The Android application follows a similar design. A seperate collection of class
 		\label{figure:android:classdiagram}
 	\end{center}
 \end{figure}
+
+\subsubsection{Remarks}
+
+The current design of the api classes is perhaps made too complex, as resources could have been accessed individually rather than through the \texttt{ForumAPI} class. The idea behind this was to mimic the structure of the REST service while keeping separate resources, as all the methods could have been placed in one class as well. Although the basic idea behind this additional library was to provide transparency, this complicated design may have reduced some of its benefits.
 
 
 \subsection{iOS application}

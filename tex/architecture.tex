@@ -47,7 +47,7 @@ The roles of the communicating entities correspond to the client-server paradigm
 To allow access to the database, each application can talk to a public interface. For example, in listing \ref{listing:dbaccess} is shown how one could use \texttt{PHP} scripts to access the database, using URLs to pass arguments. This kind of approach is 
 
 %% LISTING
-\lstinputlisting[language=PHP, caption={Example of a \texttt{PHP} script to insert data into the database (simplification).}, label={listing:dbaccess}]{code/dbaccess.php}
+%\lstinputlisting[language=PHP, caption={Example of a \texttt{PHP} script to insert data into the database (simplification).}, label={listing:dbaccess}]{code/dbaccess.php}
 
 In this case, REST (Representational State Transfer) was used to implement this point of public access. The REST approach uses \texttt{HTTP} operations GET, PUT, DELETE and POST to manipulate resources represented in XML\cite{coulouris:2012}. The API shields the underlying data structures from the clients, organizes the application's data model into resources and can be accessed through a standardized protocol.
 
